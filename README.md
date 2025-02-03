@@ -34,6 +34,7 @@ For more details, visit the [US Earthquake API](https://earthquake.usgs.gov/fdsn
 1️⃣ **Bronze Layer** → Stores raw earthquake data  
 2️⃣ **Silver Layer** → Cleans & transforms data  
 3️⃣ **Gold Layer** → Provides aggregated insights  
+![Medallion Architecture](images/datapipeline.png)
 
 ## 📊 Power BI Dashboard
 - 🌎 **Earthquake Monitoring**
