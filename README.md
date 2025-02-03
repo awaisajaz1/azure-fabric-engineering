@@ -33,3 +33,4 @@ For more details, visit the [US Earthquake API](https://earthquake.usgs.gov/fdsn
 
 ## 📊 Power BI Dashboard
 - 🌎 **Earthquake Monitoring**
+![Earthquake Monitoring Dashboard](images/powerbi-Report.png)
