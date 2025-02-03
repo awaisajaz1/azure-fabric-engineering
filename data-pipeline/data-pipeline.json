@@ -1,0 +1,116 @@
+{
+	"name": "Earthquake Data Pipeline",
+	"objectId": "3ac6accf-da8e-4c4a-93e1-f87e328507dd",
+	"properties": {
+		"activities": [
+			{
+				"name": "Bronze Notebook",
+				"type": "TridentNotebook",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
+				"dependsOn": [
+					{
+						"activity": "Incremental API",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"notebookId": "43782cf3-8463-4be8-acc5-83f11f7a8bf5",
+					"workspaceId": "2f056e32-333c-42be-a273-36b21c107478",
+					"parameters": {
+						"start_date": {
+							"value": {
+								"value": "@formatDateTime(addDays(utcNow(), -2), 'yyyy-MM-dd' )",
+								"type": "Expression"
+							},
+							"type": "string"
+						},
+						"end_date": {
+							"value": {
+								"value": "@formatDateTime(utcNow(), 'yyyy-MM-dd')",
+								"type": "Expression"
+							},
+							"type": "string"
+						}
+					}
+				}
+			},
+			{
+				"name": "Silver Notebook",
+				"type": "TridentNotebook",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
+				"dependsOn": [
+					{
+						"activity": "Bronze Notebook",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"notebookId": "54f29ab8-a7ac-4959-9c54-05643f43e7e6",
+					"workspaceId": "2f056e32-333c-42be-a273-36b21c107478"
+				}
+			},
+			{
+				"name": "Gold Notebook",
+				"type": "TridentNotebook",
+				"dependsOn": [
+					{
+						"activity": "Silver Notebook",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"notebookId": "6e54e068-94ff-4b24-8f40-3f6ae7b0f2da",
+					"workspaceId": "2f056e32-333c-42be-a273-36b21c107478"
+				}
+			},
+			{
+				"name": "Incremental API",
+				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"enableStaging": false
+				}
+			}
+		],
+		"lastModifiedByObjectId": "3666f0b9-17b1-430c-a33a-47597ee8bb19",
+		"lastPublishTime": "2025-02-03T13:29:18Z"
+	}
+}
