@@ -4,11 +4,22 @@
 This project implements a **data pipeline** using **Azure Fabric** to process earthquake data from the **US Earthquake API**. The solution follows **Medallion Architecture**, utilizes **Delta Tables**, and provides real-time insights via **Power BI** dashboards.
 
 ## 🚀 Architecture
-- **Data Source**: US Earthquake API → Azure Fabric **Lakehouse**
+- **Data Source**: US Earthquake API () → Azure Fabric **Lakehouse**
 - **Processing**: PySpark Notebooks
 - **Storage**: **Delta Tables** (Bronze → Silver → Gold)
 - **Orchestration**: Azure Fabric **Data Pipeline**
 - **Visualization**: SQL Endpoint for **Power BI Dashboards**
+
+  ## 📖 API Documentation
+For more details, visit the [US Earthquake API](https://earthquake.usgs.gov/fdsnws/event/1/).
+🔹 Open Link in a New Tab (GitHub Flavored Markdown Doesn't Support This)
+However, if you’re using HTML within Markdown, you can force the link to open in a new tab:
+
+md
+Copy
+Edit
+<a href="https://earthquake.usgs.gov/fdsnws/event/1/" target="_blank">US Earthquake API</a>
+Would you like me to add an external link to your README? 🚀
 
 ## 🔹 Features
 ✅ **Lakehouse Architecture** for scalable data storage  
