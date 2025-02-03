@@ -3,6 +3,8 @@
 ## 📌 Overview
 This project implements a **data pipeline** using **Microsoft Azure Fabric** to process earthquake data from the **US Earthquake API**. The solution follows **Medallion Architecture**, utilizes **Delta Tables & lakehouse**, and provides real-time insights via **Power BI** dashboards.
 
+![Workspace Lineage](images/Workspace-Linage.png)
+
 ## 🚀 Architecture
 - **Data Source**: US Earthquake API 
 - **Processing**: PySpark Notebooks
