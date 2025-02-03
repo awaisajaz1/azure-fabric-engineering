@@ -22,6 +22,8 @@ For more details, visit the [US Earthquake API](https://earthquake.usgs.gov/fdsn
 ✅ **Delta Tables** for ACID compliance & fast queries  
 ✅ **SQL Endpoint** for direct Power BI integration  
 
+![Lakehouse](images/lakehouse.png)
+
 ## 🛠️ Tech Stack
 - **Azure Fabric** (Lakehouse, Data Pipeline, SQL Endpoint)
 - **PySpark** for data transformation
