@@ -14,6 +14,7 @@ This project implements a **data pipeline** using **Microsoft Azure Fabric** to 
 
 ## 📖 API Documentation
 For more details, visit the [US Earthquake API](https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=<start_date>&endtime=<end_date>).
+change query parameters in the link, <start_date>, <end_date>
 
 ## 🔹 Features
 ✅ **Lakehouse Architecture** for scalable data storage  
@@ -34,6 +35,7 @@ For more details, visit the [US Earthquake API](https://earthquake.usgs.gov/fdsn
 1️⃣ **Bronze Layer** → Stores raw earthquake data  
 2️⃣ **Silver Layer** → Cleans & transforms data  
 3️⃣ **Gold Layer** → Provides aggregated insights  
+![Medallion Architecture](images/datapipeline.png)
 
 ## 📊 Power BI Dashboard
 - 🌎 **Earthquake Monitoring**
